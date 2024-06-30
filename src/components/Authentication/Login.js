@@ -36,22 +36,19 @@ const Login = () => {
     }
 
     try {
+      console.log("login to")
       const config = {
         headers: {
           "Content-type": "application/json",
         },
       };
 
-          const response = await fetch('/api/user/login', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
-    });
-
-  const data = await response.json();
-  console.log(data); 
+      console.log("Before post req")
+      const { data } = await axios.post(
+        "/api/user/login",
+        { email, password },
+        config
+      );
       console.log("This is Data",data)
       toast({
         title: "Login Successful",
