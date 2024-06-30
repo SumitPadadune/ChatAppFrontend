@@ -44,10 +44,10 @@ const Login = () => {
       };
 
       console.log("Before post req")
+      // console.log(data)
       const { data } = await axios.post(
         "/api/user/login",
         { email, password },
-
         config
       );
       console.log("This is Data",data)
