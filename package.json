@@ -2,7 +2,8 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://chat-app-deploy-mauve.vercel.app",
+  "proxy": "https://chat-app-deploy-f493t38jk-sumits-projects-58f40f31.vercel.app/",
+  
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
