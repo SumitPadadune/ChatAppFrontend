@@ -51,7 +51,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        "https://chatappdeploy-wiqe.onrender.com/api/user",
         {
           name,
           email,

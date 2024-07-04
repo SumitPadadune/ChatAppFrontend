@@ -45,7 +45,7 @@ const Login = () => {
 
       console.log("Before post req")
       const { data } = await axios.post(
-        "/api/user/login",
+        "https://chatappdeploy-wiqe.onrender.com/api/user/login",
         { email, password },
         config
       );

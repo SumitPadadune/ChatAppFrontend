@@ -77,7 +77,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(`https://chatappdeploy-wiqe.onrender.com/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
@@ -105,7 +105,7 @@ function SideDrawer() {
         },
       };
       console.log('1234')
-      const { data } = await axios.post(`/api/chat`,{userId},config);
+      const { data } = await axios.post(`https://chatappdeploy-wiqe.onrender.com/api/chat`,{userId},config);
       console.log(data)
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
