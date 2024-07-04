@@ -11,13 +11,11 @@ import { ChatState } from "../Context/ChatProvider";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
-  console.log(123)
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
 
   const toast = useToast();
 
   const fetchChats = async () => {
-    // console.log(user._id);
     try {
       const config = {
         headers: {
@@ -29,7 +27,7 @@ const MyChats = ({ fetchAgain }) => {
       setChats(data);
     } catch (error) {
       toast({
-        title: "Error Occured!",
+        title: "Error Occurred!",
         description: "Failed to Load the chats",
         status: "error",
         duration: 5000,
@@ -87,7 +85,7 @@ const MyChats = ({ fetchAgain }) => {
         borderRadius="lg"
         overflowY="hidden"
       >
-        {chats ? (
+        {Array.isArray(chats) ? (
           <Stack overflowY="scroll">
             {chats.map((chat) => (
               <Box
@@ -107,15 +105,13 @@ const MyChats = ({ fetchAgain }) => {
                 </Text>
                 {chat.latestMessage && (
                   <Text fontSize="xs">
-                  {chat.latestMessage.sender?.name && (
-                    <b>{chat.latestMessage.sender?.name} : </b>
-                  )}
-                  {chat.latestMessage.content?.length > 50
-                    ? chat.latestMessage.content?.substring(0, 51) + "..."
-                    : chat.latestMessage?.content}
-                </Text>
-                
-                
+                    {chat.latestMessage.sender?.name && (
+                      <b>{chat.latestMessage.sender?.name} : </b>
+                    )}
+                    {chat.latestMessage.content?.length > 50
+                      ? chat.latestMessage.content?.substring(0, 51) + "..."
+                      : chat.latestMessage?.content}
+                  </Text>
                 )}
               </Box>
             ))}
