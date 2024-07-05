@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-.App{
+.App {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   background: radial-gradient(circle, #1a237e, #000000);
   background-repeat: no-repeat;
   background-attachment: fixed;

@@ -1,0 +1,17 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .chat-section {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
